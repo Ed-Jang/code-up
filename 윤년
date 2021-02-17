@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+	int a;
+	scanf("%d", &a);
+	//윤년은 4,400의 배수 100의 배수가 아닐때
+	if (a % 4 == 0 && a % 100 != 0) {
+		printf("1");
+	}
+	else if (a % 400 == 0) {
+		printf("1");
+	}
+	else {
+		printf("0");
+	}
+	return 0;
+}
