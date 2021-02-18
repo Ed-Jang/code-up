@@ -1,0 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+	int a, num100,num10,num1;
+	scanf("%d\n%1d%1d%1d", &a,&num100,&num10,&num1);
+	printf("%d\n", a * num1);
+	printf("%d\n", a * num10);
+	printf("%d\n", a * num100);
+	printf("%d", a * num1 + (a * num10 * 10) + (a * num100 * 100));
+	return 0;
+}
