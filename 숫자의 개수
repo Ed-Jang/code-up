@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+	int a, b, c; //3개의 (100이상)자연수
+	int total;//곱한값
+	int num[10] = {0,};//숫자 개수를 담을 배열
+	int remainder = 0;
+	scanf("%d\n%d\n%d", &a,&b,&c);
+	total = a * b * c;
+
+	while (total > 0) {
+		remainder = total % 10;
+		total = total / 10;
+		num[remainder]++;
+	}
+	for (int i = 0; i < 10; i++) {
+		printf("%d\n", num[i]);
+	}
+
+	
+
+	return 0;
+}
