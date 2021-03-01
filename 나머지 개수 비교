@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+	int a; //나눠질 수
+	int remain[10];//숫자 개수를 담을 배열
+	int result = 0;
+
+	for (int i = 0; i < 10; i++) {
+		scanf("%d", &a);
+		remain[i] = a % 42;//42로 나눈 나머지값
+	}
+	
+	for (int i = 0; i < 10; i++) {
+		int count = 0; //for문이 돌때마다 카운트 초기화
+		for (int j = i + 1; j < 10; j++) {
+			if (remain[i] == remain[j])count++; //0번째랑 1번째 비교
+		}
+		if (count == 0)result++; //비교해서 다르면 result++
+	}
+	printf("%d", result);//다른경우마다 ++했기때문에 다른 수 만큼 출력
+
+	return 0;
+}
