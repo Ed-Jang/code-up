@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+	int n; //시험본 과목수
+	double test[1000];//점수를 넣을 배열
+	double max = 0, result = 0; //점수,최고점수
+	int i;
+	scanf("%d", &n);
+	for (i = 0; i < n; i++) {
+		scanf("%lf", &test[i]);
+		if (max < test[i]) {
+			max = test[i];
+		}
+	}
+	for (i = 0; i < n; i++) {
+		test[i] = test[i] / max * 100;
+		result += test[i];
+	}
+	printf("%.2lf", (result / n));
+	return 0;
+}
