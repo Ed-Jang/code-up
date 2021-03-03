@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+	int n, i, j, score, add;
+	char arr[81];
+	scanf("%d", &n);//테스트 케이스 개수
+	
+	for (i = 0; i < n; i++) {
+		score = 0, add = 1;
+		scanf("%s", arr);
+
+		for (j = 0; j < strlen(arr); j++) {
+			if (arr[j] == 'O') {
+				score += add;
+				add++;
+			}
+			else {
+				add = 1;
+			}
+		}
+
+		printf("%d\n", score);
+	}
+
+	return 0;
+}
