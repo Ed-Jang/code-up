@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+	int c;//케이스 개수
+	scanf("%d", &c);
+
+	for (int i = 0; i < c; i++) {
+		int students = 0,count = 0;//학생수,평균넘는수
+		int total = 0;//점수합
+		double avg;//평균점수
+
+		scanf("%d", &students);
+		int test[1001];
+		for (int j = 0; j < students; j++) {
+			scanf("%d", &test[j]);
+			total += test[j];//점수를 전부 더함
+		}
+		avg = (double)total / students; //평균점수 구하기
+		for (int k = 0; k < students; k++) {
+			if (avg < test[k])count++;//평균보다 크면 카운트
+		}
+		printf("%.3f%%\n", (float)count/ students * 100);
+	}
+	return 0;
+}
