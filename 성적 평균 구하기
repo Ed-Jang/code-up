@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+	int kor, eng, math, sum;
+	float avg;
+	printf("성적을 입력하세요\n");
+	printf("국어 : ");
+	scanf("%d", &kor);
+	printf("영어 : ");
+	scanf("%d", &eng);
+	printf("수학 : ");
+	scanf("%d", &math);
+	sum = kor + eng + math;
+	avg = sum / 3.0f;
+	printf("평균 : %f\n", avg);
+	return 0;
+}
