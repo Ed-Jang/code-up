@@ -1,0 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void) {
+	int w, h, b;//가로 세로 비트
+	double result = 0;
+	scanf("%d %d %d", &w, &h, &b);
+	result = w * h * b;
+	printf("%.2f MB", ((result / 8) / 1024) / 1024);
+
+	return 0;
+}
