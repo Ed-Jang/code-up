@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+//시작 값 , 등차, n번째인지를 입력받아
+//n번째 수를 출력하는 프로그램만들기
+
+int main(void) {
+	int a, d, n;
+	scanf("%d %d %d", &a, &d, &n);
+	for (int i = 1; i < n; i++) {
+		a += d;
+	}
+	printf("%d", a);
+	return 0;
+}
