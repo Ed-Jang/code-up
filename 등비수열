@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+//시작 값 , 등비, n번째인지를 입력받아
+//n번째 수를 출력하는 프로그램만들기
+
+int main(void) {
+	int a, r, n;
+	long long result = 0;
+	scanf("%d %d %d", &a, &r, &n);
+	result = a * pow(r, n - 1);
+	printf("%lld", result);
+	return 0;
+}
