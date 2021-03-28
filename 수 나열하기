@@ -1,0 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+//시작 값 , 곱할 값, 더 할값 n번째인지를 입력받아
+//n번째 수를 출력하는 프로그램만들기
+
+int main(void) {
+	long long a, m, d, n;//시작값, 곱할 값, 더할 값, 몇번 째
+	scanf("%lld %lld %lld %lld", &a, &m, &d, &n);
+	for (int i = 1; i < n; i++) {
+		a = a * m + d;
+	}
+	printf("%lld", a);
+	return 0;
+}
