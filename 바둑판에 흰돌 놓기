@@ -1,0 +1,20 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h> 
+
+int main(void) {
+	int n, i, j, x, y; //n개의 흰돌이 놓인 위치
+	int a[20][20] = { 0, }; //19X19 바둑판 크기만큼 2차원배열
+	scanf("%d", &n); 
+	for (i = 1; i <= n; i++) {//n개의 돌 개수 만큼 입력 받기 반복
+		scanf("%d %d", &x, &y);//돌의 x y좌표 입력 받기
+		a[x][y] = 1; //입력받은 돌은 1 로 표시
+	}
+
+	//바둑판만들기
+	for (i = 1; i <= 19; i++) {//한 행씩(세로)
+		for (j = 1; j <= 19; j++) {//한 열씩(가로)
+			printf("%d ", a[i][j]);//값 출력
+		}
+		printf("\n");//줄바꾸기
+	}
+}
