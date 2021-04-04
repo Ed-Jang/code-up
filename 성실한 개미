@@ -1,0 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h> 
+//10*10크기의 미로상자와 먹이의 위치
+//갈수있는 곳 0 , 벽 or 장애물 1 , 먹이 2
+//출발은 (2,2)
+//개미는 오른쪽으로 이동 중 벽을 만나면 아래로
+int main(void) {
+	int i, j,x=2,y=2;
+	int maze[11][11] = { 0, };
+
+	//미로 구조 입력
+	for (i = 1; i <= 10; i++) { //세로
+		for (j = 1; j <= 10; j++) {//가로
+			scanf("%d", &maze[i][j]);
+		}
+	}
+
+	while (maze[x][y] != 2) { //x,y좌표가 2일때 까지 반복
+		maze[x][y] = 9;//개미가 지나가는 자리에 9
+		if (maze[x][y + 1] != 1) y += 1;//오른쪽이 1이 아니면 이동
+		else if (maze[x + 1][y] != 1)x += 1;//아래쪽이 1이 아니면 이동
+		else break; //길이 막히면 while문 탈출		
+	}
+	maze[x][y] = 9;//마지막 위치에 9
+
+	//미로 출력
+	for (i = 1; i <= 10; i++) {//세로
+		for (j = 1; j <= 10; j++) {//가로
+			printf("%d ",maze[i][j]);
+		}
+		printf("\n");
+	}
+}
