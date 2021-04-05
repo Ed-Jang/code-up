@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h> 
+//이름(영문자) 나이(정수) 부서코드(영문자) 보안키(실수) 순으로 보안카드에 등록
+struct card { //구조체로 보안카드 양식 만들기
+	char name[21]; //이름
+	int age;//나이
+	char code[2];//부서코드
+	double key;//보안키
+};
+
+int main(void) {
+	struct card c;//구조체변수 선언
+	scanf("%s", &c.name);
+	scanf("%d", &c.age);
+	scanf("%s", &c.code);
+	scanf("%lf", &c.key);
+
+	printf("%s\n", c.name);
+	printf("%d\n", c.age);
+	printf("%s\n", c.code);
+	printf("%g\n", c.key);
+
+}
