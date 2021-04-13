@@ -1,0 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h> 
+
+int main(void) {
+	int c;
+	scanf("%d", &c);
+	printf("%.3f", ((((double)9 / 5) * c) + 32)); //괄호를 통해 정확한 연산순서,double형 선언으로 소수점출력
+}
+
