@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h> 
+//재귀를 이용할 경우 시간초과가 나기 때문에
+//동적 프로그래밍 방식을 이용한다
+//int fibonacci(int n) {
+//	if (n == 0) {
+//		printf("0");
+//		return 0;
+//	}
+//	else if (n == 1) {
+//		printf("1");
+//		return 1;
+//	}
+//	else {
+//		return fibonacci(n - 1) + fibonacci(n - 2);
+//	}
+//}
+
+int main(void) {
+	int t,n;
+	int dp[41] = { 0,1,1 };
+
+	for (int i = 3; i < 41; i++) {//3~40까지의 값을 dp배열에 넣어둔다
+		dp[i] = dp[i - 1] + dp[i - 2];
+	}
+
+	scanf("%d", &t);//테스트 횟수
+
+	for (int i = 0; i < t; i++) {
+		scanf("%d", &n);
+
+		if (n == 0) { //0이면 1,0 출력
+			printf("%d %d\n", 1, 0);
+		}
+		else if (n == 1) {//1이면 0,1 출력
+			printf("%d %d\n", 0, 1);
+		}
+		else {//배열에 미리 넣어둔 값을 출력
+			printf("%d %d\n", dp[n - 1], dp[n]);
+		}
+	}
+}
+//재귀를 활용하면 코드는 깔끔할 수 있으나 실행 속도가 느려질 수 있으므로
+//동적 프로그래밍을 활용해 미리 계산 해둔 값을 출력한다
+
